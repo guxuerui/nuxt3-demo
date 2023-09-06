@@ -4,7 +4,11 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
-  modules: ['@nuxthq/ui'],
+  modules: [
+    '@nuxthq/ui',
+    '@pinia/nuxt',
+    '@vueuse/nuxt',
+  ],
   devServer: {
     port: 3001,
   },

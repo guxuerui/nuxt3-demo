@@ -16,7 +16,10 @@
     "@iconify-json/twemoji": "^1.1.12",
     "@nuxt/devtools": "latest",
     "@nuxthq/ui": "^2.7.0",
+    "@pinia/nuxt": "^0.4.11",
+    "@vueuse/nuxt": "^10.4.1",
     "eslint": "^8.48.0",
-    "nuxt": "^3.7.0"
+    "nuxt": "^3.7.0",
+    "pinia": "^2.1.6"
   }
 }
