@@ -2,10 +2,6 @@
 import { appDescription } from './constants/index'
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-  typescript: {
-    shim: false,
-  },
   modules: [
     '@nuxthq/ui',
     '@pinia/nuxt',
@@ -31,5 +27,17 @@ export default defineNuxtConfig({
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
       ],
     },
+  },
+  devtools: { enabled: true },
+  typescript: {
+    shim: false,
+  },
+  experimental: {
+    // when using generate, payload js assets included in sw precache manifest
+    // but missing on offline, disabling extraction it until fixed
+    payloadExtraction: false,
+    inlineSSRStyles: false,
+    renderJsonPayloads: true,
+    typedPages: true,
   },
 })

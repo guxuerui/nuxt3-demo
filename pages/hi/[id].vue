@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const route = useRoute()
+const route = useRoute<'hi-id'>()
 const user = useUserStore()
 const name = route.params.id
 
@@ -11,7 +11,7 @@ watchEffect(() => {
 <template>
   <div class="text-center">
     <div class="inline-block animate-bounce animate-duration-500 text-4xl">
-      <span class="i-twemoji:waving-hand" />
+      <div class="i-twemoji:waving-hand" />
     </div>
     <h3 class="text-2xl font-medium">
       Hi,
