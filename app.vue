@@ -1,11 +1,12 @@
 <script lang="ts" setup>
+import { appName } from '~/constants'
 
+useHead({
+  title: appName,
+})
 </script>
 
 <template>
-  <!-- <div>
-    <NuxtWelcome />
-  </div> -->
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
