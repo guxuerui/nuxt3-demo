@@ -14,18 +14,14 @@ function toggle() {
 
 const items = ref<string[]>(['a', 'b', 'c', 'd'])
 const isPlay = ref(true)
-
-function togglePlay(val: boolean) {
-  isPlay.value = val
-}
 </script>
 
 <template>
   <main class="text-center">
     <div
       class="bg-teal-500 overflow-hidden h-[530px]"
-      @mouseenter="togglePlay(false)"
-      @mouseleave="togglePlay(true)"
+      @mouseenter="isPlay = false"
+      @mouseleave="isPlay = true "
     >
       <Caresoul
         v-for="(item, index) in items"
