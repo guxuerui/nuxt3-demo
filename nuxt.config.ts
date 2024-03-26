@@ -3,14 +3,10 @@ import { appDescription } from './constants/index'
 
 export default defineNuxtConfig({
   modules: [
-    '@nuxthq/ui',
+    '@nuxt/ui',
     '@pinia/nuxt',
     '@vueuse/nuxt',
-    'nuxt-primevue',
   ],
-  primevue: {
-    usePrimeVue: true,
-  },
   devServer: {
     port: 3355,
   },
