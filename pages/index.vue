@@ -14,6 +14,37 @@ function toggle() {
 
 const items = ref<string[]>(['a', 'b', 'c', 'd'])
 const isPlay = ref(true)
+
+const nodes = ref([{
+  key: '0',
+  label: 'Documents',
+  data: 'Documents Folder',
+  icon: 'pi pi-fw pi-inbox',
+  nodeSelect: true,
+  children: [
+    {
+      key: '0-0',
+      label: 'Work',
+      data: 'Work Folder',
+      icon: 'pi pi-fw pi-cog',
+      selectable: true,
+      children: [
+        { key: '0-0-0', label: 'Expenses.doc', icon: 'pi pi-fw pi-file', data: 'Expenses Document', selectable: true, },
+        { key: '0-0-1', label: 'Resume.doc', icon: 'pi pi-fw pi-file', data: 'Resume Document', selectable: true, }
+      ]
+    },
+    {
+      key: '0-1',
+      label: 'Home',
+      data: 'Home Folder',
+      icon: 'pi pi-fw pi-home',
+      selectable: false,
+      styleClass: 'text-gray-200',
+      children: [{ key: '0-1-0', label: 'Invoices.txt', icon: 'pi pi-fw pi-file', data: 'Invoices for this month', selectable: true, }]
+    }
+  ]
+}])
+const selectedValue = ref(null)
 </script>
 
 <template>
@@ -46,7 +77,7 @@ const isPlay = ref(true)
         </a>
       </Caresoul>
     </div>
-    <UButton class="mt-4" @click="toggle">
+    <UButton class="my-4" @click="toggle">
       Transition
     </UButton>
 
@@ -62,6 +93,12 @@ const isPlay = ref(true)
         <div class="w-8 h-8" />
       </template>
     </ClientOnly>
+
+    <div class="my-4 dark:text-green-500">Test Theme Mode</div>
+
+    <div class="mx-auto">
+      <TreeSelect v-model="selectedValue" :options="nodes" variant="outlined" placeholder="Select Item" />
+    </div>
   </main>
 </template>
 

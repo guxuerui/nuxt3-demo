@@ -6,9 +6,13 @@ export default defineNuxtConfig({
     '@nuxthq/ui',
     '@pinia/nuxt',
     '@vueuse/nuxt',
+    'nuxt-primevue',
   ],
+  primevue: {
+    usePrimeVue: true,
+  },
   devServer: {
-    port: 3001,
+    port: 3355,
   },
   colorMode: {
     preference: 'light',
@@ -36,7 +40,7 @@ export default defineNuxtConfig({
     // when using generate, payload js assets included in sw precache manifest
     // but missing on offline, disabling extraction it until fixed
     payloadExtraction: false,
-    inlineSSRStyles: false,
+    // inlineSSRStyles: false,
     renderJsonPayloads: true,
     typedPages: true,
   },

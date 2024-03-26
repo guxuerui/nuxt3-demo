@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { appName } from '~/constants'
+import 'primevue/resources/themes/aura-light-green/theme.css'
 
 useHead({
   title: appName,
